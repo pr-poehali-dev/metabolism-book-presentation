@@ -187,18 +187,18 @@ const Index = () => {
                 </p>
               </div>
 
-              <Card className="border-2 border-accent bg-accent/10 p-8 text-center">
-                <p className="mb-6 text-xl font-light">
+              <Card className="border-2 border-accent bg-accent/10 p-10 text-center shadow-xl">
+                <p className="mb-6 text-2xl font-light">
                   Получите книгу «Метаболизм» прямо сейчас и сделайте первый шаг к жизни без усталости, 
                   с ясной головой и телом, которое работает на вас, а не против вас!
                 </p>
-                <p className="mb-6 text-muted-foreground">· Электронный формат (PDF) — мгновенная доставка</p>
+                <p className="mb-8 text-lg text-muted-foreground">· Электронный формат (PDF) — мгновенная доставка</p>
                 <Button
                   size="lg"
-                  className="gap-3 px-8 py-6 text-lg transition-all hover:scale-105"
+                  className="gap-3 bg-accent px-12 py-7 text-xl font-medium text-background shadow-lg transition-all hover:scale-110 hover:bg-accent/90 hover:shadow-2xl"
                   onClick={() => window.open("https://wa.me/79516004875", "_blank")}
                 >
-                  <Icon name="ShoppingCart" size={24} />
+                  <Icon name="ShoppingCart" size={28} />
                   <span>Заказать книгу</span>
                 </Button>
               </Card>
