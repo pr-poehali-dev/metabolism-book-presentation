@@ -225,18 +225,39 @@ const Index = () => {
               </div>
 
               <Card className="border-2 border-accent bg-accent/10 p-10 text-center shadow-xl">
-                <p className="mb-6 text-2xl font-light">
-                  Получите книгу «Метаболизм» прямо сейчас и сделайте первый шаг к жизни без усталости, 
-                  с ясной головой и телом, которое работает на вас, а не против вас!
-                </p>
-                <p className="mb-8 text-lg text-muted-foreground">· Электронный формат (PDF) — мгновенная доставка</p>
+                <div className="mb-8">
+                  <p className="mb-6 text-3xl font-medium text-accent">
+                    Что можно купить за 200 рублей? Кофе? А можно — перезапустить метаболизм! 💡
+                  </p>
+                  <div className="space-y-3 text-xl">
+                    <p>Вы получаете не просто PDF, а готовую систему!</p>
+                    <p className="text-2xl font-medium text-accent">И всё это — за 200 рублей!</p>
+                    <p className="text-lg">Это в 5 раз дешевле обычной стоимости! 🔥</p>
+                    <p className="text-lg italic">Цена чашки кофе — а результат на всю жизнь.</p>
+                  </div>
+                </div>
+                
+                <div className="mb-8 rounded-lg bg-accent/20 p-6">
+                  <p className="mb-4 text-lg font-medium">Успей забрать по супер-цене, пока она не изменилась! 👇</p>
+                  <p className="text-4xl font-bold text-accent">Супер-цена 200 рублей! 🚀</p>
+                </div>
+
+                <div className="mb-8 space-y-3 text-lg">
+                  <p className="font-medium">Чтобы купить:</p>
+                  <ol className="space-y-2">
+                    <li>✅ Напиши в WhatsApp "Метаболизм"</li>
+                    <li>✅ Получи инструкцию по оплате</li>
+                    <li>✅ Наслаждайся практикумом!</li>
+                  </ol>
+                </div>
+
                 <Button
                   size="lg"
                   className="gap-3 bg-accent px-12 py-7 text-xl font-medium text-background shadow-lg transition-all hover:scale-110 hover:bg-accent/90 hover:shadow-2xl"
                   onClick={() => window.open("https://wa.me/79516004875", "_blank")}
                 >
                   <Icon name="ShoppingCart" size={28} />
-                  <span>Заказать книгу</span>
+                  <span>Купить за 200 рублей</span>
                 </Button>
               </Card>
             </div>
