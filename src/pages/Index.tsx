@@ -188,11 +188,19 @@ const Index = () => {
               </div>
 
               <Card className="border-2 border-accent bg-accent/10 p-8 text-center">
-                <p className="mb-4 text-xl font-light">
+                <p className="mb-6 text-xl font-light">
                   Получите книгу «Метаболизм» прямо сейчас и сделайте первый шаг к жизни без усталости, 
                   с ясной головой и телом, которое работает на вас, а не против вас!
                 </p>
-                <p className="text-muted-foreground">· Электронный формат (PDF) — мгновенная доставка</p>
+                <p className="mb-6 text-muted-foreground">· Электронный формат (PDF) — мгновенная доставка</p>
+                <Button
+                  size="lg"
+                  className="gap-3 px-8 py-6 text-lg transition-all hover:scale-105"
+                  onClick={() => window.open("https://wa.me/79516004875", "_blank")}
+                >
+                  <Icon name="ShoppingCart" size={24} />
+                  <span>Заказать книгу</span>
+                </Button>
               </Card>
             </div>
           </div>
