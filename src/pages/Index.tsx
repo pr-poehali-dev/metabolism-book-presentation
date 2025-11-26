@@ -47,13 +47,21 @@ const Index = () => {
           </div>
 
           <div className="order-1 md:order-2">
-            <Card className="overflow-hidden border-2 border-border shadow-2xl">
-              <img
-                src="https://cdn.poehali.dev/files/39fadf99-09ee-4cf9-bf8b-97aab8ea4844.jpeg"
-                alt="Обложка книги Метаболизм"
-                className="w-full object-cover"
-              />
-            </Card>
+            <div className="perspective-1000">
+              <div className="transform-gpu transition-transform duration-300 hover:rotate-y-6 hover:scale-105">
+                <Card className="relative overflow-hidden border-2 border-border shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
+                  <img
+                    src="https://cdn.poehali.dev/files/39fadf99-09ee-4cf9-bf8b-97aab8ea4844.jpeg"
+                    alt="Обложка книги Метаболизм"
+                    className="w-full object-cover shadow-[8px_8px_16px_rgba(0,0,0,0.3)]"
+                    style={{ aspectRatio: '2/3' }}
+                  />
+                  <div className="absolute -right-2 top-0 h-full w-8 bg-gradient-to-l from-black/30 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 h-8 w-full bg-gradient-to-t from-black/20 to-transparent"></div>
+                </Card>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -177,6 +185,35 @@ const Index = () => {
                   Я стала высыпаться за 7 часов вместо 9 беспокойных. Я наконец-то хозяйка своей энергии».
                 </p>
               </Card>
+
+              <div className="my-16">
+                <div className="mb-6 flex items-center gap-3">
+                  <div className="h-[1px] w-12 bg-accent"></div>
+                  <h3 className="text-4xl font-light">Автор метода</h3>
+                </div>
+                <Card className="bg-card p-8">
+                  <h4 className="mb-4 text-2xl font-light text-accent">
+                    Андрей Сергеевич Равинских
+                  </h4>
+                  <p className="mb-2 text-lg text-muted-foreground">
+                    Основатель студии ладования «Благодать», специалист по метаболической коррекции.
+                  </p>
+                  <div className="mt-6 space-y-4 leading-relaxed">
+                    <p>
+                      Автор этой системы не понаслышке знает, что такое метаболический кризис. 
+                      Пройдя путь от хронической усталости и неконтролируемого набора веса к энергичной 
+                      и полноценной жизни, он посвятил себя изучению метаболических процессов.
+                    </p>
+                    <p>
+                      Соединив глубокие научные знания с многолетней практикой работы с сотнями клиентов, 
+                      он создал уникальную систему восстановления жиросжигания. Его подход — это не просто 
+                      сборник рецептов, а фундаментальное «перепрошивка» метаболизма, которая дает 
+                      долгосрочные результаты. Его миссия — помочь людям вырваться из плена усталости 
+                      и неэффективных диет, вернув себе право на энергию и здоровье.
+                    </p>
+                  </div>
+                </Card>
+              </div>
 
               <div className="my-12 text-center">
                 <p className="mb-4 text-2xl font-light text-accent">
