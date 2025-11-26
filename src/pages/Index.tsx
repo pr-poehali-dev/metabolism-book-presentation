@@ -1,8 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 23,
+    minutes: 59,
+    seconds: 59
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev.seconds > 0) {
+          return { ...prev, seconds: prev.seconds - 1 };
+        } else if (prev.minutes > 0) {
+          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+        } else if (prev.hours > 0) {
+          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
+        }
+        return { hours: 23, minutes: 59, seconds: 59 };
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
@@ -227,7 +250,8 @@ const Index = () => {
               <Card className="border-2 border-accent bg-accent/10 p-10 text-center shadow-xl">
                 <div className="mb-8">
                   <p className="mb-6 text-3xl font-medium text-accent">
-                    Что можно купить за 200 рублей? Кофе? А можно — перезапустить метаболизм! 💡
+                    Что можно купить за 200 рублей? Кофе?<br />
+                    А можно — перезапустить метаболизм! 💡
                   </p>
                   <div className="space-y-3 text-xl">
                     <p>Вы получаете не просто PDF, а готовую систему!</p>
@@ -240,6 +264,32 @@ const Index = () => {
                 <div className="mb-8 rounded-lg bg-accent/20 p-6">
                   <p className="mb-4 text-lg font-medium">Успей забрать по супер-цене, пока она не изменилась! 👇</p>
                   <p className="text-4xl font-bold text-accent">Супер-цена 200 рублей! 🚀</p>
+                  
+                  <div className="mt-6">
+                    <p className="mb-3 text-sm font-medium uppercase tracking-wider">Предложение истекает через:</p>
+                    <div className="flex justify-center gap-4">
+                      <div className="flex flex-col items-center">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-background text-2xl font-bold text-accent shadow-lg">
+                          {String(timeLeft.hours).padStart(2, '0')}
+                        </div>
+                        <span className="mt-2 text-xs uppercase">Часов</span>
+                      </div>
+                      <div className="flex items-center pb-6 text-2xl font-bold">:</div>
+                      <div className="flex flex-col items-center">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-background text-2xl font-bold text-accent shadow-lg">
+                          {String(timeLeft.minutes).padStart(2, '0')}
+                        </div>
+                        <span className="mt-2 text-xs uppercase">Минут</span>
+                      </div>
+                      <div className="flex items-center pb-6 text-2xl font-bold">:</div>
+                      <div className="flex flex-col items-center">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-background text-2xl font-bold text-accent shadow-lg">
+                          {String(timeLeft.seconds).padStart(2, '0')}
+                        </div>
+                        <span className="mt-2 text-xs uppercase">Секунд</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="mb-8 space-y-3 text-lg">
