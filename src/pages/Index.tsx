@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState({
+    days: 6,
     hours: 23,
     minutes: 59,
     seconds: 59
@@ -18,9 +19,11 @@ const Index = () => {
         } else if (prev.minutes > 0) {
           return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
         } else if (prev.hours > 0) {
-          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
+          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
+        } else if (prev.days > 0) {
+          return { days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
         }
-        return { hours: 23, minutes: 59, seconds: 59 };
+        return { days: 6, hours: 23, minutes: 59, seconds: 59 };
       });
     }, 1000);
 
@@ -267,7 +270,14 @@ const Index = () => {
                   
                   <div className="mt-6">
                     <p className="mb-3 text-sm font-medium uppercase tracking-wider">Предложение истекает через:</p>
-                    <div className="flex justify-center gap-4">
+                    <div className="flex justify-center gap-3">
+                      <div className="flex flex-col items-center">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-background text-2xl font-bold text-accent shadow-lg">
+                          {timeLeft.days}
+                        </div>
+                        <span className="mt-2 text-xs uppercase">Дней</span>
+                      </div>
+                      <div className="flex items-center pb-6 text-2xl font-bold">:</div>
                       <div className="flex flex-col items-center">
                         <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-background text-2xl font-bold text-accent shadow-lg">
                           {String(timeLeft.hours).padStart(2, '0')}
