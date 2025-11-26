@@ -49,9 +49,9 @@ const Index = () => {
           <div className="order-1 md:order-2">
             <Card className="overflow-hidden border-2 border-border shadow-2xl">
               <img
-                src="https://cdn.poehali.dev/projects/c0f76778-7f4a-40a8-a94c-45d20636c73c/files/9991245d-547d-4ded-8200-5ee94db33dc8.jpg"
+                src="https://cdn.poehali.dev/files/39fadf99-09ee-4cf9-bf8b-97aab8ea4844.jpeg"
                 alt="Обложка книги Метаболизм"
-                className="aspect-[3/4] w-full object-cover"
+                className="w-full object-cover"
               />
             </Card>
           </div>
